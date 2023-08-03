@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/signup" method = "POST">
+    <label for="name">First name:</label><br>
+    <input type="text" id="name" name="name"><br>
+
+    <label for="icon">Icon id:</label><br>
+    <input type="number" id="icon" name="icon"><br>
+
+    <label for="player">player name:</label><br>
+    <input type="text" id="player" name="player"><br>
+    <div class="uncreative_player"></div>
+
+    <label for="email">Email:</label><br>
+    <input type="text" id="email" name="email"><br>
+    <div class="uncreative_email"></div>
+
+    <label for="password">password:</label><br>
+    <input type="password" id="password" name="password"><br>
+
+    <input type="submit" value="Submit">
+    </form>
+    <a href="/auth/google">Google Authentication</a>
+    <a href="/auth/google/logout">Google Logout</a>
+</body>
+<script>
+    uncPlayer=document.querySelector(".uncreative_player");
+    uncEmail=document.querySelector(".uncreative_email");
+
+    dataUncPlayer='{{dataUncPlayer}}';
+    dataUncEmail='{{dataUncEmail}}';
+    if(dataUncPlayer=='no1'){
+        uncPlayer.innerHTML="The player name is in use";
+    }
+    if(dataUncEmail=='no1'){
+        uncEmail.innerHTML="The email is in use";
+    }
+</script>
+</html>
